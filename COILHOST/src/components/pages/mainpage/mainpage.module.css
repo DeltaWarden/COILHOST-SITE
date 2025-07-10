@@ -1,0 +1,374 @@
+.mainPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(270deg, #0a0a0f, #0a0025, #0d0020);
+  background-size: 600% 600%;
+  animation: gradientMove 15s ease infinite;
+  color: #b388ff;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+}
+
+.heroContent h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.heroContent h1 span {
+  font-weight: 800;
+  color: #6759ad;
+}
+
+.heroContent p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.heroButton {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #7b61ff;
+  color: #0a0a0f;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.heroButton:hover {
+  transform: scale(1.1);
+  background-color: #8570ff;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  background: linear-gradient(47deg,rgba(0, 0, 0, 1) 0%, rgb(36, 23, 70) 53%, rgba(0, 0, 0, 1) 100%);
+  padding: 50px 20px;
+  text-align: center;
+  border-top: 2px solid #7b61ff;
+  border-bottom: 2px solid #7b61ff;
+}
+
+.stat {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.icon {
+  font-size: 3rem;
+  color: #7b61ff;
+  margin-bottom: 15px;
+}
+
+.stat h3 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: #b388ff;
+}
+
+.stat p {
+  margin: 5px 0 0;
+  color: #c2aaff;
+}
+
+.whyUs {
+  background: radial-gradient(circle at 50% 50%, #280341, #000000, #000000);
+  background-size: 400% 400%;
+  animation: radialSpin 12s linear infinite;
+  padding: 40px 10px;
+  text-align: center;
+  position: relative;
+}
+
+.whyUs::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to right, var(--main-color), #7b61ff, #6759ad);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+@keyframes radialSpin {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.whyUs h2 {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  color: #7b61ff;
+}
+
+.reasons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+.reason {
+  background: rgba(10, 10, 26, 0.85);
+  border: 1px solid #7b61ff;
+  border-radius: 10px;
+  padding: 15px 10px;
+  width: 75%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(2px);
+}
+
+.reason:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 18px #7b61ff;
+}
+
+.reasonIcon {
+  font-size: 2.5rem;
+  color: #7b61ff;
+  margin-bottom: 10px;
+}
+
+.reason h4 {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+  color: #b388ff;
+}
+
+.reason p {
+  color: #c2aaff;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 992px) {
+  .reasons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reason {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .reasons {
+    grid-template-columns: 1fr;
+  }
+
+  .reason {
+    width: 95%;
+  }
+}
+
+.serverIcon {
+  font-size: 3rem;
+  color: #9b5de5;
+  margin-bottom: 15px;
+}
+
+.price {
+  display: block;
+  font-size: 1.4rem;
+  color: #f15bb5;
+  margin: 10px 0;
+}
+
+.orderButton {
+  max-width: 75px;
+  display: inline-block;
+  padding: 12px 22px;
+  background: #9b5de5;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.orderButton:hover {
+  background: #f15bb5;
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .serverGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .serverGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .orderButton {
+    width: 100%;
+  }
+}
+
+.catalog {
+    background-color: #000000;
+}
+
+.catalog {
+  padding: 80px 20px;
+  background: linear-gradient(145deg, #0a0a0f, #0e002a, #000000);
+  animation: gradientMove 20s ease infinite;
+}
+
+.catalog h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 50px;
+  color: #7b61ff;
+  animation: fadeInUpAnim 0.8s ease forwards;
+}
+
+.serverGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+.serverCard {
+  background: rgba(15, 15, 40, 0.85);
+  border: 1px solid rgba(184, 97, 255, 0.4);
+  border-radius: 16px;
+  padding: 25px 20px;
+  box-shadow: 0 0 25px rgba(179, 97, 255, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+
+.serverCard::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(158, 97, 255, 0.2) 0%, transparent 60%);
+  transform: rotate(45deg);
+  animation: pulseGlow 6s infinite linear;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.serverCard:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 40px rgba(88, 79, 134, 0.4);
+  border: 1px solid rgba(191, 145, 255, 0.7);
+}
+
+.serverCard h3 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.serverCard p {
+  color: #c2aaff;
+  margin: 6px 0;
+  font-size: 1rem;
+}
+
+.serverCard .price {
+  display: block;
+  margin-top: 15px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #7b61ff;
+}
+
+.serverCard .orderButton {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 22px;
+  background: #7b61ff;
+  color: #0a0a0f;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.serverCard .orderButton:hover {
+  background: #a088ff;
+  box-shadow: 0 0 20px rgba(191, 145, 255, 0.6);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .serverCard {
+    height: auto;
+    justify-content: flex-start;
+  }
+}

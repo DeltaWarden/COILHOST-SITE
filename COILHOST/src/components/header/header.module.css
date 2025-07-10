@@ -1,0 +1,129 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.856);
+  backdrop-filter: blur(8px);
+  padding: 1% 0;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  color: rgb(126, 126, 126);
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.navIcon {
+  margin-right: 8px;
+  font-size: 1.4rem;
+}
+
+.navItem:hover {
+  transform: scale(1.1) translateY(-5px);
+  color: var(--main-color);
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  background-color: rgba(124, 110, 255, 0.1);
+  border-radius: 10px;
+  padding: 1% 2%;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.account:hover {
+  background-color: rgba(120, 110, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.accountIcon {
+  font-size: 1.3rem;
+  color: #846eff;
+  margin-right: 8px;
+}
+
+.accountName {
+  color: #846eff;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #7b61ff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.burger:active {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    height: 30px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+  }
+  .nav {
+    border-radius: 15px;
+    position: absolute;
+    top: 55px;
+    left: 5px;
+    right: 5px;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    gap: 15px;
+    padding: 20px 0;
+    transform: translateY(-200%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+  }
+
+  .navItem {
+    margin-left: 5%;
+  }
+
+  .nav.open {
+    transform: translateY(0);
+  }
+
+  .burger {
+    display: block;
+  }
+}
