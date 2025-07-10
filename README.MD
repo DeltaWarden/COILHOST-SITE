@@ -69,4 +69,6 @@ npm run dev
 
 Заказать полный сайт - TG: @deltasquare
 
+## License 
+The project uses the Apache-2.0 license
 
